@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+$host = 'sql.free.fr';
+$username = 'hoel.jamier';
+$password = 'Kaqi3663';
+$dbname = 'hoel_jamier';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Observations</title>
-</head>
+// Create connection
+$conn = mysql_connect($host, $username, $password);
 
-<body>
-    <table>
-        <thead>
-            <tr>
-                <th>M</th>
-                <th>Nom</th>
-                <th>Type</th>
-                <th>Magnitude</th>
-                <th>Ascension droite</th>
-                <th>Déclinaison</th>
-            </tr>
-        </thead>
-    </table>
-</body>
-
-</html>
+// Check connection
+if (!$conn) {
+    die('Could not connect: ' . mysql_error());
+}
+echo 'Conn: OK';
